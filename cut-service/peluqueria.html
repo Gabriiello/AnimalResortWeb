@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -75,19 +75,19 @@
   </head>
   <body>
     <div class="banner">
-      <img src="logoAnimalR.png" />
+      <img src="../statics/logoAnimalR.png" />
     </div>
 
     <h2 class="h2">PELUQUERIA</h2>
 
     <div class="container">
-      <img src="fiesta.png" alt="Imagen izquierda" />
+      <img src="../statics/fiesta.png" alt="Imagen izquierda" />
       <p>SELECCIONA UN ESTILO DE CORTE</p>
-      <img src="fiesta.png" alt="Imagen derecha" />
+      <img src="../statics/fiesta.png" alt="Imagen derecha" />
     </div>
 
     <div class="cards-container">
-      <!-- Aquí se agregarán las tarjetas dinámicamente -->
+      // Aquí se agregarán las tarjetas dinámicamente 
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -127,4 +127,187 @@
       });
     </script>
   </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peluqueria</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+  <style>
+    body {
+      background-color: #9dcd55;
+    }
+
+    .banner {
+      text-align: center;
+    }
+
+    .titulo-img {
+      width: 300px; /* Ajusta el tamaño de acuerdo a tu imagen */
+    }
+
+    .container {
+      margin-top: 5%;
+      width: 90%;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+    }
+
+    .container img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    .container p {
+      font-size: 20px;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 350px; 
+      height: 300px; 
+      margin: 20px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      overflow: hidden; 
+    }
+
+    .card:hover {
+      transform: scale(1.2); 
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content p.nombre_descu {
+      color: #3c8735;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .card-content p.precios {
+      color: #9dcd55;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <img src="../statics/logoAnimalR.png" alt="Logo AnimalR" />
+  </div>
+
+  <div class="banner">
+    <img src="../statics/titulo_peluqueria.png" class="titulo-img" alt="Título Peluquería">
+  </div>
+
+  <div class="container">
+    <img src="../statics/fiesta.png" alt="Imagen izquierda" />
+    <p>SELECCIONA UN ESTILO DE CORTE</p>
+    <img src="../statics/fiesta.png" alt="Imagen derecha" />
+  </div>
+
+  <div class="cards-container">
+    <div class="card">
+      <div class="card-content">
+        <img src="../statics/corte_schnauzer.jpg" alt="Corte de Schnauzer">
+        <p class="nombre_descu">Corte de Schnauzer difuminado</p>
+        <p class="precios">Precio: $35,000</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <img src="../statics/corte_ejemplo1.jpg" alt="Corte PELON">
+        <p class="nombre_descu">Corte de ejemplo 1</p>
+        <p class="precios">Precio: $50,000</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <img src="../statics/corte_ejemplo2.jpg" alt="Corte de ejemplo 2">
+        <p class="nombre_descu">Corte de ejemplo 2</p>
+        <p class="precios">Precio: $40,000</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <img src="../statics/corte_ejemplo3.jpg" alt="Corte de ejemplo 3">
+        <p class="nombre_descu">Corte de ejemplo 3</p>
+        <p class="precios">Precio: $45,000</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <img src="../statics/corte_ejemplo4.jpg" alt="Corte de ejemplo 4">
+        <p class="nombre_descu">Corte de ejemplo 4</p>
+        <p class="precios">Precio: $200,000</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Realizar la solicitud AJAX al archivo PHP para obtener los datos en formato JSON
+      $.ajax({
+        url: "precios_corte.php",
+        dataType: "json",
+        success: function (data) {
+          // La variable 'data' contendrá los datos devueltos por el archivo PHP
+          // Ahora creamos y agregamos las tarjetas a la página
+          var cardsContainer = $(".cards-container");
+          data.forEach(function (item) {
+            var card = $('<div class="card">');
+            var cardContent = $('<div class="card-content">');
+
+            // Decodificar y mostrar la imagen
+            var imageElement = $('<img loading="lazy">').attr(
+              "src",
+              "data:image/jpeg;base64," + item.idprecios
+            );
+
+            var nombre_descu = $("<p class='nombre_descu'>" + item.nombre_descu + "</p>");
+            var precios = $("<p class='precios'>Precio: <br>" + item.precios + "</p>");
+
+            // Agregamos los elementos a la tarjeta
+            cardContent.append(imageElement, nombre_descu, precios);
+            card.append(cardContent);
+            cardsContainer.append(card);
+          });
+        },
+        error: function () {
+          console.log("Error al obtener los datos.");
+        },
+      });
+    });
+  </script>
+</body>
 </html>

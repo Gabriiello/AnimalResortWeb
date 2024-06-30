@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,9 +14,22 @@
       .banner {
         text-align: center;
       }
-    </style>
+    
 
-    <style>
+    
+    /*.titulo-img {
+      width: 10%;
+      max-width: 500px; 
+      height: auto; 
+      margin: 0 auto; 
+    }*/
+ 
+    .titulo-img {
+      width: 170px; 
+    }
+
+
+   
       .h2 {
         text-align: center;
         color: #ffffff;
@@ -25,21 +38,19 @@
         text-stroke: 2px #3c8735;
         padding: 10px;
       }
-    </style>
 
-    <style>
       body {
         background-color: #9dcd55;
       }
-    </style>
-
-    <style>
+    
       .container {
         margin-top: 5%;
         width: 90%;
         color: white;
         text-align: center;
         display: flex;
+        justify-content: center; 
+        align-items: center; 
       }
 
       .container img {
@@ -52,17 +63,43 @@
       .container p {
         font-size: 20px;
       }
-    </style>
+   
 
-    <style>
-      .card {
+    
+     /* .card {
         width: 300px;
         margin: 20px auto;
         text-align: center;
+      }*/
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        gap: 20px; 
+        padding: 20px;
       }
+      .card {
+        width: 350px; 
+        height: 300px; 
+        margin: 20px;
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden; 
+      }
+  
+      .card:hover {
+        transform: scale(1.2); 
+      }
+  
       .card img {
         width: 100%;
         height: auto;
+        flex: 1; /* Ajustar el tamaño de la imagen para ocupar todo el espacio disponible */
+
       }
       .card-content p.nombre_descu {
         color: #9dcd55;
@@ -75,19 +112,40 @@
   </head>
   <body>
     <div class="banner">
-      <img src="logoAnimalR.png" />
+      <img src="../statics/logoAnimalR.png" />
     </div>
 
-    <h2 class="h2">BAÑO</h2>
+    <div class="banner">
+      <img src="../statics/img_titulo_bano.png" class="titulo-img" alt="Título Peluquería">
+    </div>
+  
 
     <div class="container">
-      <img src="fiesta.png" alt="Imagen izquierda" />
+      <img src="../statics/fiesta.png" alt="Imagen izquierda" />
       <p>SELECCIONA UN TIPO DE BAÑO</p>
-      <img src="fiesta.png" alt="Imagen derecha" />
+      <img src="../statics/fiesta.png" alt="Imagen derecha" />
     </div>
 
     <div class="cards-container">
-      <!-- Aquí se agregarán las tarjetas dinámicamente -->
+
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-content">
+            <img src="../statics/corte_schnauzer.jpg" alt="Baño cosmeticor">
+            <p class="nombre_descu">Corte de Schnauzer difuminado</p>
+            <p class="precios">Precio: $35,000</p>
+          </div>
+        </div>
+    
+        <div class="card">
+          <div class="card-content">
+            <img src="../statics/corte_ejemplo1.jpg" alt="Corte PELON">
+            <p class="nombre_descu">Corte de ejemplo 1</p>
+            <p class="precios">Precio: $50,000</p>
+          </div>
+        </div>
+
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -113,6 +171,201 @@
 
               var nombre_descu = $("<p >" + item.nombre_descu + "</p>");
               var precios = $("<p>Precio: <br>" + item.precios + "</p>");
+
+              // Agregamos los elementos a la tarjeta
+              cardContent.append(imageElement, nombre_descu, precios);
+              card.append(cardContent);
+              cardsContainer.append(card);
+            });
+          },
+          error: function () {
+            console.log("Error al obtener los datos.");
+          },
+        });
+      });
+    </script>
+  </body>
+</html> 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baño</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      .banner {
+        text-align: center;
+      }
+
+      .titulo-img {
+        width: 170px;
+      }
+
+      .h2 {
+        text-align: center;
+        color: #ffffff;
+        font-size: 50px;
+        -webkit-text-stroke: 2px #3c8735;
+        text-stroke: 2px #3c8735;
+        padding: 10px;
+      }
+
+      body {
+        background-color: #9dcd55;
+      }
+
+      .container {
+        margin-top: 5%;
+        width: 90%;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container img {
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        display: inline-block;
+      }
+
+      .container p {
+        font-size: 20px;
+      }
+
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .card {
+        width: 350px;
+        height: 300px;
+        margin: 20px;
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: scale(1.2);
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        flex: 1; }
+
+      .card-content {
+        padding: 20px;
+        color: #3c8735; /* Color de texto invertido */
+      }
+
+      .card-content p.nombre_descu {
+        color: #3c8735;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      .card-content p.precios {
+        color: #9dcd55;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <img src="../statics/logoAnimalR.png" />
+    </div>
+
+    <div class="banner">
+      <img
+        src="../statics/img_titulo_bano.png"
+        class="titulo-img"
+        alt="Título Peluquería"
+      />
+    </div>
+
+    <div class="container">
+      <img src="../statics/fiesta.png" alt="Imagen izquierda" />
+      <p>SELECCIONA UN TIPO DE BAÑO</p>
+      <img src="../statics/fiesta.png" alt="Imagen derecha" />
+    </div>
+
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-content">
+          <img src="../statics/corte_schnauzer.jpg" alt="Baño cosmético" />
+          <p class="nombre_descu">Baño cosmético</p>
+          <p class="precios">Precio: $35,000</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <img src="../statics/corte_ejemplo1.jpg" alt="baño terapeutico" />
+          <p class="nombre_descu">baño terapeutico</p>
+          <p class="precios">Precio: $50,000</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <img src="../statics/corte_ejemplo2.jpg" alt="Baño Especial" />
+          <p class="nombre_descu">Baño Especial</p>
+          <p class="precios">Precio: $40,000</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <img src="../statics/corte_ejemplo3.jpg" alt="baño de ejemplo 1" />
+          <p class="nombre_descu">baño de ejemplo 1</p>
+          <p class="precios">Precio: $45,000</p>
+        </div>
+      </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Realizar la solicitud AJAX al archivo PHP para obtener los datos en formato JSON
+        $.ajax({
+          url: "precios_baño.php",
+          dataType: "json",
+          success: function (data) {
+            // La variable 'data' contendrá los datos devueltos por el archivo PHP
+            // Ahora creamos y agregamos las tarjetas a la página
+            var cardsContainer = $(".cards-container");
+            data.forEach(function (item) {
+              var card = $('<div class="card">');
+              var cardContent = $('<div class="card-content">');
+
+              // Decodificar y mostrar la imagen
+              var imageElement = $('<img loading="lazy">').attr(
+                "src",
+                "data:image/jpeg;base64," + item.idprecios
+              );
+
+              var nombre_descu = $("<p class='nombre_descu'>" + item.nombre_descu + "</p>");
+              var precios = $("<p class='precios'>Precio: <br>" + item.precios + "</p>");
 
               // Agregamos los elementos a la tarjeta
               cardContent.append(imageElement, nombre_descu, precios);

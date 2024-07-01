@@ -194,14 +194,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baño</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
 
     <style>
       .banner {
         text-align: center;
+        margin: 20px 0;
       }
 
       .titulo-img {
@@ -229,12 +227,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
       }
 
       .container img {
         width: 30px;
         height: 30px;
-        margin: 0 10px;
+        margin: 10px;
         display: inline-block;
       }
 
@@ -245,15 +244,15 @@
       .cards-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; /* Centrar horizontalmente */
-        align-items: center; /* Centrar verticalmente */
+        justify-content: center;
+        align-items: center;
         gap: 20px;
         padding: 20px;
       }
 
       .card {
-        width: 350px;
-        height: 300px;
+        width: 100%;
+        max-width: 350px;
         margin: 20px;
         text-align: center;
         background-color: #ffffff;
@@ -270,11 +269,11 @@
       .card img {
         width: 100%;
         height: auto;
-        flex: 1; }
+      }
 
       .card-content {
         padding: 20px;
-        color: #3c8735; /* Color de texto invertido */
+        color: #3c8735;
       }
 
       .card-content p.nombre_descu {
@@ -282,7 +281,7 @@
         font-weight: bold;
         margin-bottom: 5px;
       }
-  
+
       .card-content p.precios {
         color: #9dcd55;
         font-size: 18px;
@@ -291,21 +290,21 @@
   </head>
   <body>
     <div class="banner">
-      <img src="../statics/logoAnimalR.png" />
+      <img src="../statics/logoAnimalR.png" alt="Logo" class="img-fluid" />
     </div>
 
     <div class="banner">
       <img
         src="../statics/img_titulo_bano.png"
-        class="titulo-img"
+        class="titulo-img img-fluid"
         alt="Título Peluquería"
       />
     </div>
 
     <div class="container">
-      <img src="../statics/fiesta.png" alt="Imagen izquierda" />
+      <img src="../statics/fiesta.png" alt="Imagen izquierda" class="img-fluid" />
       <p>SELECCIONA UN TIPO DE BAÑO</p>
-      <img src="../statics/fiesta.png" alt="Imagen derecha" />
+      <img src="../statics/fiesta.png" alt="Imagen derecha" class="img-fluid" />
     </div>
 
     <div class="cards-container">
@@ -319,8 +318,8 @@
 
       <div class="card">
         <div class="card-content">
-          <img src="../statics/corte_ejemplo1.jpg" alt="baño terapeutico" />
-          <p class="nombre_descu">baño terapeutico</p>
+          <img src="../statics/corte_ejemplo1.jpg" alt="Baño terapéutico" />
+          <p class="nombre_descu">Baño terapéutico</p>
           <p class="precios">Precio: $50,000</p>
         </div>
       </div>
@@ -335,13 +334,12 @@
 
       <div class="card">
         <div class="card-content">
-          <img src="../statics/corte_ejemplo3.jpg" alt="baño de ejemplo 1" />
-          <p class="nombre_descu">baño de ejemplo 1</p>
+          <img src="../statics/corte_ejemplo3.jpg" alt="Baño de ejemplo 1" />
+          <p class="nombre_descu">Baño de ejemplo 1</p>
           <p class="precios">Precio: $45,000</p>
         </div>
       </div>
-
-
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>

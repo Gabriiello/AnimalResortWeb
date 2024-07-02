@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -66,14 +66,14 @@
     <div class="banner">
       <img src="../statics/logoAnimalR.png" />
     </div>
-    <h2 class="h2">MASCOTAS</h2>
+
     <div class="cards-container"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
         $.ajax({
-          url: "mascotas_usuario.php",
+          url: "../pets-service/mascotas_usuario.php",
           dataType: "json",
           success: function (data) {
             var cardsContainer = $(".cards-container");
@@ -123,198 +123,4 @@
       });
     </script>
   </body>
-</html>
-
--->
-
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis mascotas</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #9dcd55;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .banner {
-            text-align: center;
-            padding: 10px 0;
-            margin-bottom: 10px; 
-        }
-
-        .banner img {
-            width: 150px; 
-            margin-bottom: 10px; 
-        }
-
-        .h2 {
-            text-align: center;
-            color: #ffffff;
-            font-size: 50px;
-            -webkit-text-stroke: 2px #3c8735;
-            text-stroke: 2px #3c8735;
-            padding: 10px;
-
-          }
-
-        .menu {
-            background-color: transparent;  
-            color: white;
-            text-align: center;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px; 
-        }
-
-        .menu h2 {
-            margin-bottom: 10px; /* Espacio entre el título y los botones */
-        }
-
-        .menu button {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 15px 30px; /* Aumento de tamaño al pasar el cursor */
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease; /* Transición suave */
-            border-radius: 8px; /* Bordes redondeados */
-        }
-
-        .menu button:hover {
-          transform: scale(1.3); /* Efecto de escala al pasar el cursor */
-          background-color: #3c8735; /* Cambio de color al pasar el cursor */
-        }
-
-        .container {
-            margin-top: 5%;
-            width: 90%;
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-        }
-
-        .container img {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-            display: inline-block;
-        }
-
-        .container p {
-            font-size: 20px;
-        }
-
-        .card {
-            width: 300px;
-            margin: 20px auto;
-            text-align: center;
-            background-color: white;
-            color: black;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-        }
-
-        .card-content p span {
-            color: #3c8735;
-        }
-
-        .add-pet-form {
-            margin-top: 30px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 400px;
-        }
-
-        .add-pet-form h3 {
-            color: #3c8735;
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            color: #3c8735; /* Cambio de color para las etiquetas del formulario */
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="banner">
-        <img src="../statics/logoAnimalR.png" alt="Logo">
-    </div>
-    <div class="container">
-        <h2 class="h2">MASCOTAS</h2>
-        <div class="menu">
-            <button>Inicio</button>
-            <button>Perfil</button>
-            <button>Configuración</button>
-            <button>Cerrar sesión</button>
-        </div>
-        <form id="add-pet-form" class="add-pet-form">
-            <h3>Añadir Nueva Mascota</h3>
-            <div class="mb-3">
-                <label for="pet-name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="pet-name" required>
-            </div>
-            <div class="mb-3">
-                <label for="pet-age-years" class="form-label">Años</label>
-                <input type="number" class="form-control" id="pet-age-years" required>
-            </div>
-            <div class="mb-3">
-                <label for="pet-age-months" class="form-label">Meses</label>
-                <input type="number" class="form-control" id="pet-age-months" required>
-            </div>
-            <div class="mb-3">
-                <label for="pet-breed" class="form-label">Raza</label>
-                <input type="text" class="form-control" id="pet-breed" required>
-            </div>
-            <div class="mb-3">
-                <label for="pet-gender" class="form-label">Género</label>
-                <select class="form-control" id="pet-gender" required>
-                    <option value="Macho">Macho</option>
-                    <option value="Hembra">Hembra</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="pet-weight" class="form-label">Peso</label>
-                <input type="number" class="form-control" id="pet-weight" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Añadir Mascota</button>
-        </form>
-    </div>
-    <footer>
-        &copy; 2024 AnimalRe. Todos los derechos reservados.
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Aquí puedes agregar cualquier script adicional que necesites
-        });
-    </script>
-</body>
 </html>

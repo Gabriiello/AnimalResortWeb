@@ -1,8 +1,8 @@
 <?php
-require 'conexion.php';
+require '../auth-service/conexion.php';
 
 if(!isset($_COOKIE['usuario_id'])) {
-    echo "<script>alert('Sesi√≥n expirada, inicie nuevamente'); window.location.href='index.php';</script>";
+    echo "<script>alert('Sesi®Æn expirada, inicie nuevamente'); window.location.href='index.php';</script>";
     exit();
 }
 
@@ -82,7 +82,7 @@ $conexion->close();
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="banner">
-                    <img src="logoAnimalR.png">
+                    <img src="../statics/logoAnimalR.png">
                 </div>
                 <div class="info-div">
                     <ul>
@@ -91,7 +91,7 @@ $conexion->close();
                         <li><strong>Tel√©fono:</strong> <?php echo $telefono; ?></li>
                         <li><strong>Documento:</strong> <?php echo $documento; ?></li>
                         <li class="nav-item">
-                            <a class="nav-link btn-logout" href="index.php">CERRAR SESION</a>
+                            <a class="nav-link btn-logout" href="../index.php">CERRAR SESION</a>
                         </li>
 
                     </ul>

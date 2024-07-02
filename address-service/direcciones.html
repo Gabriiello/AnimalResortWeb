@@ -39,7 +39,7 @@
   
   <body>
     <div class="banner">
-      <img src="logoAnimalR.png" />
+      <img src="../statics/logoAnimalR.png" />
     </div>
 
     <div class="cards-container">
@@ -64,17 +64,17 @@
                   "</span></p>"
               );
               var direccion = $(
-                '<p>Dirección<br>  <span style="color: #3c8735;">' +
+                '<p>Direccion<br>  <span style="color: #3c8735;">' +
                   item.direccion +
                   "</span></p>"
               );
               var descripcion = $(
-                '<p>Descripción casa<br> <span style="color: #3c8735;">' +
+                '<p>Descripcion casa<br> <span style="color: #3c8735;">' +
                   item.descripcion +
                   "</span></p>"
               );
 
-              var imagen = $('<img src="logo_casa.png" alt="Imagen">');
+              var imagen = $('<img src="../statics/logo_casa.png" alt="Imagen">');
               
             // Agregamos los elementos a la tarjeta
               cardContent.append(imagen,ciudad, direccion, descripcion);

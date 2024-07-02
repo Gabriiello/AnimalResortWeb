@@ -24,28 +24,6 @@
             flex-direction: column;
         }
 
-        .navbar {
-            background-color: #343a40;
-        }
-
-        .navbar-brand img {
-            max-width: 40px;
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .navbar-nav .nav-link {
-            color: #fff !important;
-            margin-right: 1rem;
-        }
-
         .main-content {
             flex: 1;
             display: flex;
@@ -174,43 +152,66 @@
                 width: calc(100% - 20px); /* Una columna en dispositivos móviles */
             }
         }
+        
+         .navbar {
+      background-color: #343a40;
+      z-index: 1;
+    }
+
+    .navbar-brand img {
+      max-width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      margin-right: 1rem;
+    }
+
+    .navbar-toggler-icon {
+      color: #fff;
+    }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
-                Animal Resort
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="..\menu-service\inicio.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="perfil.php">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="reservas.html">Reservas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mascotas.html">Mascotas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="direcciones.html">Direcciones</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
+        Animal Resort
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
     <div class="main-content">
         <div class="banner">
             <h2>Algunas razones del por qué deberías elegir nuestro servicio de guardería</h2>
@@ -239,7 +240,7 @@
     </div>
 
     <footer class="text-center mt-4">
-        <a href="../menu-service/guarderia.html" class="btn-link btnfos-4">
+        <a href="reserva_guarderia.html" class="btn-link btnfos-4">
             <span>Reservar</span>
         </a>
     </footer>
@@ -248,76 +249,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script > 
-        fetch('../daycare-service/precios_guarderia.php')
-           .then(response => response.json())
-           .then(data => {
-               // Procesar los datos obtenidos
-               if (data.length > 0) {
-
-                   let container = document.querySelector('.container-fluid.d-flex.justify-content-center.align-items-center');
-                   let diario=document.createElement('p');
-                   diario.innerHTML = "Valor Guardería por día<br><span style='color: #3c8735;'>$" + data[0] + "</span>";
-                   container.appendChild(diario);
-
-                    let secondContainer = document.querySelector('.container');
-                    let img1 = document.createElement('img');
-                    img1.src = "../statics/fiesta.png";
-                    img1.alt = "Imagen izquierda";
-
-                    let p = document.createElement('p');
-                    p.innerHTML = "<strong>DESCUENTOS DISPONIBLES</strong>";
-
-                    let img2 = document.createElement('img');
-                    img2.src = "../statics/fiesta.png";
-                    img2.alt = "Imagen derecha";
-
-                    secondContainer.appendChild(img1);
-                    secondContainer.appendChild(p);
-                    secondContainer.appendChild(img2);
-                    
-                         let container3 = document.querySelector('.container2');
-                        // Crear el contenedor blanco con letra gris
-                        let precioContainer = document.createElement('div');
-                        precioContainer.style.backgroundColor = 'white';
-                        precioContainer.style.color = 'grey';
-                        precioContainer.style.textAlign = 'center';
-                        precioContainer.style.padding = '10px';
-                        precioContainer.style.marginTop = '10px';
-                        precioContainer.style.borderRadius = '10px';
-                        precioContainer.innerHTML ="5 a 9 días<br>valor día<br><span style='color: #3c8735;'>$" + data[1] + "</span>";
-                 
-                        
-                        let precioContainer2 = document.createElement('div');
-                        precioContainer2.style.backgroundColor = 'white';
-                        precioContainer2.style.color = 'grey';
-                        precioContainer2.style.textAlign = 'center';
-                        precioContainer2.style.padding = '10px';
-                        precioContainer2.style.marginTop = '10px';
-                        precioContainer2.style.borderRadius = '10px';
-                        precioContainer2.innerHTML ="10 a 14 días<br>valor día<br><span style='color: #3c8735;'>$" + data[2] + "</span>";
-                        
-                        let precioContainer3 = document.createElement('div');
-                        precioContainer3.style.backgroundColor = 'white';
-                        precioContainer3.style.color = 'grey';
-                        precioContainer3.style.textAlign = 'center';
-                        precioContainer3.style.padding = '10px';
-                        precioContainer3.style.marginTop = '10px';
-                        precioContainer3.style.borderRadius = '10px';
-
-                        precioContainer3.innerHTML ="+15 días<br>valor día<br><span style='color: #3c8735;'>$" + data[3] + "</span>";
-                        
-
-                        // Agregar el contenedor al segundo contenedor
-                        container3.appendChild(precioContainer);
-                                container3.appendChild(precioContainer2);
-                                        container3.appendChild(precioContainer3);
-               }
-           })
-           .catch(error => {
-               console.error('Error al obtener los datos:', error);
-           });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 
 </html>

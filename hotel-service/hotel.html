@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotel</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+   
     <style>
       .banner {
         text-align: center;
       }
     </style>
+    
     <style>
     .titulo-img {
       width: 170px;
     }
-  </style>
-
+    </style>
 
     <style>
       .h2 {
@@ -58,7 +56,7 @@
     </style>
 
     <style>
-      .container {
+      .container1 {
         margin-top: 5%;
         width: 90%;
         color: white;
@@ -66,15 +64,11 @@
         display: flex;
       }
 
-      .container img {
+      .container1 img {
         width: 30px;
         height: 30px;
         margin: 0 10px;
         display: inline-block;
-      }
-
-      .container p {
-        font-size: 17px;
       }
     </style>
     <style>
@@ -87,14 +81,117 @@
         width: 30%; /* Puedes cambiar el ancho según lo desees */
         margin: 5px; /* Espacio entre los elementos */
       }
+     
+     .navbar {
+      background-color: #343a40;
+      z-index: 1;
+    }
+
+    .navbar-brand img {
+      max-width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      margin-right: 1rem;
+    }
+
+    .navbar-toggler-icon {
+      color: #fff;
+    }
+    
+        .btn-link {
+            background-color: #9dcd55;
+            display: inline-block;
+            padding: 15px 10px;
+            text-align: center;
+            color: #fff;
+            font-size: 1.5rem;
+            max-width: 400px;
+            width: 100%;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-link:hover {
+            background-color: #7fbf3f;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btnfos-4 {
+            border: 1px solid;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .btnfos-4 span {
+            z-index: 20;
+        }
+
+        .btnfos-4:after {
+            background: #fff;
+            content: "";
+            height: 155px;
+            left: -75px;
+            opacity: .2;
+            position: absolute;
+            top: -50px;
+            width: 50px;
+            transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+            transform: rotate(35deg);
+            z-index: -10;
+        }
+
+        .btnfos-4:hover:after {
+            left: 120%;
+            transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+        }
     </style>
   </head>
 
   <body>
-    <div class="banner">
-      <img src="../statics/logoAnimalR.png" />
+      
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
+        Animal Resort
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
+          </li>
+        </ul>
+      </div>
     </div>
-
+  </nav>
+  
     <div class="banner">
       <img
         src="../statics/img_titulo_hotel.png"
@@ -104,10 +201,10 @@
     </div>
 
     <div
-      class="container-fluid d-flex justify-content-center align-items-center"
-    ></div>
+      class="container-fluid d-flex justify-content-center align-items-center">
+    </div>
 
-    <div class="container"></div>
+    <div class="container1"></div>
 
     <div class="container2"></div>
 
@@ -122,26 +219,10 @@
             );
             let diario = document.createElement("p");
             diario.innerHTML =
-              "Valor Guardería por día<br><span style='color: #3c8735;'>$" +
+              "Valor hotel por día<br><span style='color: #3c8735;'>$" +
               data[0] +
               "</span>";
             container.appendChild(diario);
-
-            let secondContainer = document.querySelector(".container");
-            let img1 = document.createElement("img");
-            img1.src = "../statics/fiesta.png";
-            img1.alt = "Imagen izquierda";
-
-            let p = document.createElement("p");
-            p.innerHTML = "<strong>DESCUENTOS DISPONIBLES</strong>";
-
-            let img2 = document.createElement("img");
-            img2.src = "../statics/fiesta.png";
-            img2.alt = "Imagen derecha";
-
-            secondContainer.appendChild(img1);
-            secondContainer.appendChild(p);
-            secondContainer.appendChild(img2);
 
             let container3 = document.querySelector(".container2");
             // Crear el contenedor blanco con letra gris
@@ -178,5 +259,13 @@
           console.error("Error al obtener los datos:", error);
         });
     </script>
+      
+    <footer class="text-center mt-4">
+        <a href="../daycare-service/reserva_guarderia.html" class="btn-link btnfos-4">
+            <span>Reservar</span>
+        </a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
   </body>
 </html>

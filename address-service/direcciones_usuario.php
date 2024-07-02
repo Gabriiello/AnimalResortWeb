@@ -1,51 +1,36 @@
 <?php
-// Incluir el archivo de conexi贸n
-include 'conexon.php';
+$servername = "localhost";
+$username = "animalre";
+$password = "y367}A]y){K4Cg4";
+$dbname = "animalre_database";
 
 if(!isset($_COOKIE['usuario_id'])) {
-    echo "<script>alert('Sesi贸n expirada, inicie nuevamente'); window.location.href='index.php';</script>";
+    echo "<script>alert('Sesión expirada, inicie nuevamente'); window.location.href='index.php';</script>";
     exit();
 }
-
-try {
-    // No es necesario crear una nueva conexi贸n, ya que 'conexon.php' la define
-    // y $conexion est谩 disponible aqu铆
-    if ($conexion->connect_error) {
-        throw new Exception("Error de conexi贸n: " . $conexion->connect_error);
-    }
-
-    // Obtener y sanitizar el id del usuario desde la cookie
-    $idUsuario = intval($_COOKIE['usuario_id']);
-
-    // Preparar la consulta SQL utilizando declaraciones preparadas
-    $stmt = $conexion->prepare("SELECT ciudad, direccion, descripcion FROM Direcciones WHERE usuario_direccion = ?");
-    if ($stmt === false) {
-        throw new Exception("Error al preparar la consulta: " . $conexion->error);
-    }
-    $stmt->bind_param("i", $idUsuario);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    $data = array(); // Arreglo para almacenar los datos
-
-    // Guardar los datos en el arreglo
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
-        }
-    }
-
-    // Cerrar la declaraci贸n y la conexi贸n
-    $stmt->close();
-    $conexion->close();
-
-    // Devolver los datos en formato JSON
-    header('Content-Type: application/json');
-    echo json_encode($data);
-
-} catch (Exception $e) {
-    // Manejo de errores
-    error_log($e->getMessage());
-    echo json_encode(array('error' => 'Error al conectar con la base de datos'));
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
 }
+
+$idUsuario = $_COOKIE['usuario_id'];
+$sql = "SELECT  ciudad, direccion, descripcion FROM Direcciones WHERE usuario_direccion=$idUsuario";
+$result = $conn->query($sql);
+
+$data = array(); // Arreglo para almacenar los datos
+
+if ($result->num_rows > 0) {
+    // Guardar los datos en el arreglo
+    while ($row = $result->fetch_assoc()) {
+        // Agregar toda la fila al arreglo $data
+        $data[] = $row;
+    }
+}
+// Cerrar conexión
+$conn->close();
+// Devolver los datos en formato JSON
+header('Content-Type: application/json');
+echo json_encode($data);
 ?>

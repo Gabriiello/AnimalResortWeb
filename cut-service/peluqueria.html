@@ -56,7 +56,7 @@
       max-width: 300px; /* Ajuste máximo para el título */
     }
 
-    .container {
+    .container1 {
       margin-top: 5%;
       width: 90%;
       color: white;
@@ -67,14 +67,14 @@
       flex-wrap: wrap;
     }
 
-    .container img {
+    .container1 img {
       width: 30px;
       height: 30px;
       margin: 0 10px;
       display: inline-block;
     }
 
-    .container p {
+    .container1 p {
       font-size: 20px;
       margin-top: 10px;
       margin-bottom: 10px;
@@ -127,99 +127,78 @@
       color: #9dcd55;
       font-size: 18px;
     }
+    
+        .navbar {
+      background-color: #343a40;
+      z-index: 1;
+    }
 
+    .navbar-brand img {
+      max-width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      margin-right: 1rem;
+    }
+
+    .navbar-toggler-icon {
+      color: #fff;
+    }
 
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
       <a class="navbar-brand" href="#">
         <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
         Animal Resort
-    </a>
-   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-
-             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="..\menu-service\inicio.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="perfil.php">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="reservas.html">Reservas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mascotas.html">Mascotas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="direcciones.html">Direcciones</a>
-             </li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-
+    
   <div class="banner">
     <img src="../statics/logoAnimalR.png" alt="Logo AnimalR" />
     <img src="../statics/titulo_peluqueria.png" class="titulo-img" alt="Título Peluquería">
   </div>
 
-
-  <div class="container">
-    <p>SELECCIONA UN ESTILO DE CORTE</p>
-
-  </div>
-<!--
-  <div class="cards-container">
-    <div class="card">
-      <div class="card-content">
-        <img src="../statics/corte_schnauzer.jpg" alt="Corte de Schnauzer">
-        <p class="nombre_descu">Corte de Schnauzer difuminado</p>
-        <p class="precios">Precio: $35,000</p>
-      </div>
+  <div class="container1">
+      <p>SELECCIONA UN ESTILO DE CORTE</p>
     </div>
 
-    <div class="card">
-      <div class="card-content">
-        <img src="../statics/corte_ejemplo1.jpg" alt="Corte PELON">
-        <p class="nombre_descu">Corte de ejemplo 1</p>
-        <p class="precios">Precio: $50,000</p>
-      </div>
+    <div class="cards-container">
+      <!-- Aquí se agregarán las tarjetas dinámicamente -->
     </div>
-
-    <div class="card">
-      <div class="card-content">
-        <img src="../statics/corte_ejemplo2.jpg" alt="Corte de ejemplo 2">
-        <p class="nombre_descu">Corte de ejemplo 2</p>
-        <p class="precios">Precio: $40,000</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-content">
-        <img src="../statics/corte_ejemplo3.jpg" alt="Corte de ejemplo 3">
-        <p class="nombre_descu">Corte de ejemplo 3</p>
-        <p class="precios">Precio: $45,000</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-content">
-        <img src="../statics/corte_ejemplo4.jpg" alt="Corte de ejemplo 4">
-        <p class="nombre_descu">Corte de ejemplo 4</p>
-        <p class="precios">Precio: $200,000</p>
-      </div>
-    </div>
-  </div>
-
--->
-
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -260,7 +239,6 @@
       });
     });
   </script>
+  
 </body>
 </html>
-
-

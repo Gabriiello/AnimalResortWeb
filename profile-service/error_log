@@ -1,0 +1,3 @@
+[01-Jul-2024 18:17:07 America/Bogota] PHP Warning:  require(conexion.php): failed to open stream: No such file or directory in /home/animalre/public_html/web/profile-service/perfil.php on line 2
+[01-Jul-2024 18:17:07 America/Bogota] PHP Warning:  require(conexion.php): failed to open stream: No such file or directory in /home/animalre/public_html/web/profile-service/perfil.php on line 2
+[01-Jul-2024 18:17:07 America/Bogota] PHP Fatal error:  require(): Failed opening required 'conexion.php' (include_path='.:/usr/share/php:/opt/alt/php74/usr/share/php:/opt/alt/php74/usr/share/pear') in /home/animalre/public_html/web/profile-service/perfil.php on line 2

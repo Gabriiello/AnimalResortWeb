@@ -9,7 +9,7 @@ require_once 'vendor/autoload.php';
 $client = new Google_Client();
 $client->setClientId('631022063904-0n6jn3vcl53bi1gp1urp0o721ef0q2p0.apps.googleusercontent.com');
 $client->setClientSecret('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');
-$client->setRedirectUri('https://animalresort.com.co/services/controladorGoogle.php');
+$client->setRedirectUri('https://animalresort.com.co/web/auth-service/controladorGoogle.php');
 
 if (isset($_GET['code'])) {
     $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
@@ -39,7 +39,7 @@ if (isset($_GET['code'])) {
 
     if ($datos = $sql->fetch_object()) {
         setcookie('usuario_id', $datos->id, time() + 3600, '/'); // 'usuario_id' es el nombre de la cookie, y 3600 es la duración en segundos
-        header("Location: inicio.html");
+        header("Location: ../menu-service/inicio.html");
         exit();
     } else {
         echo "<script>
@@ -47,7 +47,7 @@ if (isset($_GET['code'])) {
             if (confirmacion) {
                 window.location.href = 'registro.php?nombre=" . urlencode($nombre) . "&email=" . urlencode($email) . "';
             } else {
-                window.location.href = 'index.php';
+                window.location.href = '../index.php';
             }
         </script>";
     }

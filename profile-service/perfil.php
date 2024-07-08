@@ -2,7 +2,7 @@
 require '../auth-service/conexion.php';
 
 if(!isset($_COOKIE['usuario_id'])) {
-    echo "<script>alert('Sesi®Æn expirada, inicie nuevamente'); window.location.href='index.php';</script>";
+    echo "<script>alert('Sesi√≥n expirada, inicie nuevamente'); window.location.href='../index.php';</script>";
     exit();
 }
 

@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 }
 
 $idUsuario = $conn->real_escape_string($_COOKIE['usuario_id']);
-$sql = "SELECT ciudad, direccion FROM Direcciones WHERE usuario_direccion = '$idUsuario' AND defecto = 'true'";
+$sql = "SELECT id, ciudad, direccion FROM Direcciones WHERE usuario_direccion = '$idUsuario' AND defecto = 'true'";
 $result = $conn->query($sql);
 
 $data = array(); // Array to store the data

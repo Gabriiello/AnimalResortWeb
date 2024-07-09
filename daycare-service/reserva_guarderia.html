@@ -124,14 +124,21 @@
       <a>Número de mascotas: <span id="numMascotas">0</span></a><br>
       <a>Días seleccionados: <span id="cantDias">0</span></a><br>
       <a>Precio diario: $<span id="precioDia">20000</span></a><br>
-      <a>Precio diario con descuento: $<span id="precioDescuento">0</span></a><br>
       <a>Precio total: $<span id="precioTotal">0</span></a>
     </div>
 
+    <div>
+      <button id="btnReservar">Reservar</button>
+    </div>
+
+    <script>
+      var fechasElegidas = []; 
+   </script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-
+    <script src="info_reserva.js"></script>
+  
+<script>
 if (!document.cookie.includes('usuario_id')) {
       alert('Sesión expirada, inicie nuevamente');
       window.location.href = '../index.php';
@@ -140,25 +147,25 @@ if (!document.cookie.includes('usuario_id')) {
         var fechaSeleccionada = document.getElementById("fechaSeleccionada");
         var diasSeleccionados = document.getElementById("diasSeleccionados");
         var direccionInfo = document.getElementById("direccionInfo");
-        var fechasElegidas = []; //
+       
 
         var calendar = flatpickr(fechaSeleccionada, {
           mode: "multiple",
           minDate: "today",
-          maxDate: new Date().fp_incr(31),
+          maxDate: new Date().fp_incr(90),
           dateFormat: "Y-m-d",
           onChange: function (selectedDates, dateStr, instance) {
             fechasElegidas = selectedDates.map(function (date) {
         return date.toISOString().split("T")[0];
       });
             diasSeleccionados.textContent = "Días: " + fechasElegidas.length;
-            console.log("fechas: ",fechasElegidas); //despues borro esta linea, o la comento, solo se usa para ver que el formato sea el correcto
+            console.log(fechasElegidas);
             actualizarResumen();
           },
         });
-
+//direcciones
         $.ajax({
-          url: "reserva_direccion.php",
+          url: "direccion_reserva.php",
           dataType: "json",
           success: function (data) {
             var direccionHtml =
@@ -172,9 +179,9 @@ if (!document.cookie.includes('usuario_id')) {
             console.log("Error al obtener los datos direccion.");
           },
         });
-
+//mascotas
         $.ajax({
-  url: "reserva_mascota.php",
+  url: "mascota_reserva.php",
   dataType: "json",
   success: function (data) {
     var mascotasContainer = $(".info-mascotas");
@@ -203,10 +210,9 @@ if (!document.cookie.includes('usuario_id')) {
 function actualizarResumen() {
           var numMascotas = $("input[type=checkbox]:checked").length;
           var cantDias = fechasElegidas.length;
-          var precioDia = 20000; // Precio por día (ajústalo según tus necesidades)
-          var precioDescuento = 0; // Precio con descuento (ajústalo según tus necesidades)
+          var precioDia = 20000; // Precio por día 
 
-          var precioTotal = cantDias * numMascotas * (precioDia - precioDescuento);
+          var precioTotal = cantDias * numMascotas * precioDia;
           // Si no hay fechas seleccionadas o mascotas, el precio total es cero
           if (cantDias === 0 || numMascotas === 0) {
             precioTotal = 0;
@@ -216,7 +222,6 @@ function actualizarResumen() {
           $("#numMascotas").text(numMascotas);
           $("#cantDias").text(cantDias);
           $("#precioDia").text(precioDia);
-          $("#precioDescuento").text(precioDescuento);
           $("#precioTotal").text(precioTotal);
         }
 
@@ -226,7 +231,7 @@ $(document).on("change", 'input[type="checkbox"]', function () {
   });
 
   function actualizarMascotasSeleccionadas() {
-    var mascotasSeleccionadas = []; //
+    var mascotasSeleccionadas = []; 
     $("input[type=checkbox]:checked").each(function () {
       mascotasSeleccionadas.push(this.id);
     });
@@ -235,6 +240,6 @@ $(document).on("change", 'input[type="checkbox"]', function () {
 
       });
 
-    </script>
+  </script>
   </body>
 </html>

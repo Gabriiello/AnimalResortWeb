@@ -33,8 +33,13 @@
   }
 
   .navbar-nav .nav-link {
-      color: #fff !important;
-      margin-right: 1rem;
+    color: #fff !important;
+    margin-right: 1rem;
+    transition: color 0.3s;
+
+  }
+  .navbar-nav .nav-link:hover {
+    color: #3c8735 !important;
   }
 
   .main-content {
@@ -51,6 +56,29 @@
       margin: 20px 0;
     }
 
+    .titulo-img, .img-fluid {
+      width: 170px;
+      animation: bounce 3s ease-in-out;
+    }
+
+    
+    @keyframes bounce {
+        0% {
+            transform: translateY(0);
+        }
+        30% {
+            transform: translateY(-20px);
+        }
+        50% {
+            transform: translateY(10px);
+        }
+        70% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
     .titulo-img {
       width: 100%; /* Cambié a 100% para que se ajuste automáticamente */
       max-width: 300px; /* Ajuste máximo para el título */
@@ -188,8 +216,8 @@
   </nav>
     
   <div class="banner">
-    <img src="../statics/logoAnimalR.png" alt="Logo AnimalR" />
-    <img src="../statics/titulo_peluqueria.png" class="titulo-img" alt="Título Peluquería">
+    <img src="../statics/logoAnimalR.png" alt="Logo AnimalR" class="img-fluid"  />
+    <img src="../statics/img_titulo_peluqueria7.png" class="titulo-img" alt="Título Peluquería">
   </div>
 
   <div class="container1">

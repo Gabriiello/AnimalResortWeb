@@ -2,21 +2,6 @@ const btnReservar = document.getElementById('btnReservar');
 
 btnReservar.addEventListener('click', async function() {
 
-    console.log("Fechas elegidas:", fechasElegidas);
-    var direccionId;
-
-    try {
-        var direccionData = await $.ajax({
-            url: "direccion_reserva.php",
-            dataType: "json"
-        });
-        direccionId = direccionData.id;
-    } catch (error) {
-        console.log("Error al obtener los datos de dirección:", error);
-        return;
-    }
-
-    var fechasElegidas=['2024-07-10', '2024-07-17', '2024-07-09'] ;
     var numMascotas = $("input[type=checkbox]:checked").length;
 
     if (fechasElegidas.length === 0 || numMascotas === 0) {
@@ -44,7 +29,7 @@ btnReservar.addEventListener('click', async function() {
             dias_reserva: fechasElegidas.length,
             id_usuario_reserva: id_usuario_reserva,
             estado_reserva: estado_reserva,
-            listaIdsMascotas: mascotasSeleccionadas
+           listaIdsMascotas: JSON.stringify(mascotasSeleccionadas)
         };
 
         $.ajax({
@@ -53,6 +38,7 @@ btnReservar.addEventListener('click', async function() {
             data: dataToSend,
             success: function(response) {
                 console.log('Reserva realizada con éxito para la fecha:', fecha);
+                window.location.href = '../history-service/reservas.html';
             },
             error: function(error) {
                 console.error('Error al realizar la reserva para la fecha:', fecha, error);

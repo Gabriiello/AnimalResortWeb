@@ -9,579 +9,260 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
    
     <style>
-      .banner {
-        text-align: center;
-        margin: 20px 0;
-        position: relative;
-        background-image: url('../statics/banner77.jpg'); 
-        background-size: cover; 
-        background-position: center; 
-        padding: 80px 0; 
-        height: 400px; 
-      }
-    
-
-      .titulo-img, .img-fluid {
-        width: 170px;
-        animation: bounce 3s ease-in-out;
-      }
-
-      @keyframes bounce {
+      @keyframes fadeInMove {
           0% {
-              transform: translateY(0);
-          }
-          30% {
-              transform: translateY(-20px);
-          }
-          50% {
-              transform: translateY(10px);
-          }
-          70% {
-              transform: translateY(-10px);
+              opacity: 0;
+              transform: translateY(20px);
           }
           100% {
+              opacity: 1;
               transform: translateY(0);
           }
       }
-    </style>
-    
-    <style>
-      .h2 {
-        text-align: center;
-        color: #3c8735;
-        font-size: 35px;
-      }
-    </style>
 
-    <style>
+      html,
       body {
-        background-color: #9dcd55;
-      }
-    </style>
-
-    <style>
-      .container-fluid {
-        margin-top: 10%;
-        width: 90%;
-        background-color: white;
-        color: rgb(155, 146, 146);
-        border-radius: 10px;
-        display: flex; /* Agregamos flexbox */
-        justify-content: center; /* Centramos horizontalmente */
-        align-items: center; /* Centramos verticalmente */
-      }
-      .container-fluid p {
-        font-size: 30px;
-      }
-      .container-fluid span {
-        display: block; /* Convertimos el span en un bloque */
-        text-align: center; /* Centramos el texto */
-        margin: 0 auto; /* Centramos horizontalmente */
-      }
-    </style>
-
-    <style>
-      .container1 {
-        margin-top: 5%;
-        width: 90%;
-        color: white;
-        text-align: center;
-        display: flex;
+          height: 100%;
+          margin: 0;
+          font-family: 'Poppins', sans-serif;
+          background-color: #ffffff;
+          overflow-x: hidden;
       }
 
-      .container1 img {
-        width: 30px;
-        height: 30px;
-        margin: 0 10px;
-        display: inline-block;
-      }
-    </style>
-    <style>
-      .container2 {
-        display: flex;
-        justify-content: center; /* Centramos horizontalmente */
+      body {
+          display: flex;
+          flex-direction: column;
       }
 
-      .container2 > div {
-        width: 30%; /* Puedes cambiar el ancho según lo desees */
-        margin: 5px; /* Espacio entre los elementos */
+      .main-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
       }
-     
-     .navbar {
-      background-color: #343a40;
-      z-index: 1;
-      margin-top: 0; 
 
-    }
+      .banner {
+          text-align: center;
+          margin: 10px 0;
+          position: relative;
+          animation: fadeInMove 2s ease-in-out;
+      }
 
-    .navbar-brand img {
-      max-width: 40px;
-      height: auto;
-      margin-right: 10px;
-    }
+      .banner h2 {
+          font-size: 2rem;
+          color: #9dcd55;
+      }
 
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
+      .banner img {
+          max-width: 100%;
+          margin: 0 10px;
+          transition: transform 0.3s ease;
+      }
 
-    .navbar-nav .nav-link {
-      color: #fff !important;
-      margin-right: 1rem;
-      transition: color 0.3s;
-    }
+      .banner img:hover {
+          transform: scale(1.1);
+      }
 
-    .navbar-nav .nav-link:hover {
-      color: #3c8735 !important;
-    }
+      .reasons {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          margin-top: 40px;
+      }
 
-    .navbar-toggler-icon {
-      color: #fff;
-    }
-    
-    .btn-link {
-        background-color: #336633; /* Color verde más oscuro */
-        display: inline-block;
-        padding: 15px 10px;
-        text-align: center;
-        color: #fff;
-        font-size: 1.5rem;
-        max-width: 400px;
-        width: 100%;
-        border-radius: 10px;
-        text-decoration: none;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    }
+      .reason {
+          background-color: white;
+          color: rgb(155, 146, 146);
+          border-radius: 10px;
+          padding: 20px;
+          margin: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: calc(30% - 20px); /* Ajuste para dispositivos pequeños */
+          text-align: center;
+          transition: transform 0.3s ease;
+          position: relative;
+          cursor: pointer;
+      }
 
-    .btn-link:hover {
-        background-color: #274d27; /* Color verde aún más oscuro para el hover */
-        transform: scale(1.02);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
+      .reason:hover {
+          transform: scale(1.05);
+      }
 
-    .btnfos-4 {
-        border: 1px solid;
-        overflow: hidden;
-        position: relative;
-    }
+      .reason h3 {
+          color: #9dcd55;
+      }
 
-    .btnfos-4 span {
-        z-index: 20;
-    }
+      .reason img {
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 10px;
+          border-radius: 10px;
+      }
 
-    .btnfos-4:after {
-        background: #fff;
-        content: "";
-        height: 155px;
-        left: -75px;
-        opacity: .2;
-        position: absolute;
-        top: -50px;
-        width: 50px;
-        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-        transform: rotate(35deg);
-        z-index: -10;
-    }
+      .reason .fixed-size {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+      }
 
-    .btnfos-4:hover:after {
-        left: 120%;
-        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-    }
-    </style>
+      .btn-link {
+          background-color: #9dcd55;
+          display: inline-block;
+          padding: 15px 10px;
+          text-align: center;
+          color: #fff;
+          font-size: 1.5rem;
+          max-width: 400px;
+          width: 100%;
+          border-radius: 10px;
+          text-decoration: none;
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+          transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      }
+
+      .btn-link:hover {
+          background-color: #7fbf3f;
+          transform: scale(1.02);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btnfos-4 {
+          border: 1px solid;
+          overflow: hidden;
+          position: relative;
+      }
+
+      .btnfos-4 span {
+          z-index: 20;
+      }
+
+      .btnfos-4:after {
+          background: #fff;
+          content: "";
+          height: 155px;
+          left: -75px;
+          opacity: .2;
+          position: absolute;
+          top: -50px;
+          width: 50px;
+          transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+          transform: rotate(35deg);
+          z-index: -10;
+      }
+
+      .btnfos-4:hover:after {
+          left: 120%;
+          transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      @media (max-width: 992px) {
+          .reason {
+              width: calc(50% - 20px); /* Dos columnas en tablets */
+          }
+      }
+
+      @media (max-width: 768px) {
+          .reason {
+              width: calc(100% - 20px); /* Una columna en dispositivos móviles */
+          }
+      }
+
+      .navbar {
+          background-color: #343a40;
+          z-index: 1;
+      }
+
+      .navbar-brand img {
+          max-width: 40px;
+          height: auto;
+          margin-right: 10px;
+      }
+
+      .navbar-brand {
+          display: flex;
+          align-items: center;
+          font-size: 1.5rem;
+          font-weight: 600;
+      }
+
+      .navbar-nav .nav-link {
+          color: #fff !important;
+          margin-right: 1rem;
+      }
+
+      .navbar-toggler-icon {
+          color: #fff;
+      }
+  </style>
 </head>
 
 <body>
-      
+
     <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
-        Animal Resort
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-    <div class="banner">
-      <img src="../statics/logoAnimalR.png" alt="Logo" class="img-fluid" /> 
-      <img src="../statics/img_titulo_hotel7.png" class="titulo-img img-fluid" alt="Título Peluquería" />
-    </div>
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
+                Animal Resort
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div
-      class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="main-content">
+        <div class="banner">
+            <h2>Algunas razones del por qué deberías elegir nuestro servicio de hotel</h2>
+        </div>
     </div>
 
-    <div class="container1"></div>
-
-    <div class="container2"></div>
-
-    <script>
-      fetch("../hotel-service/precios_hotel.php")
-        .then((response) => response.json())
-        .then((data) => {
-          // Procesar los datos obtenidos
-          if (data.length > 0) {
-            let container = document.querySelector(
-              ".container-fluid.d-flex.justify-content-center.align-items-center"
-            );
-            let diario = document.createElement("p");
-            diario.innerHTML =
-              "Valor hotel por día<br><span style='color: #3c8735;'>$" +
-              data[0] +
-              "</span>";
-            container.appendChild(diario);
-
-            let container3 = document.querySelector(".container2");
-            // Crear el contenedor blanco con letra gris
-            let precioContainer = document.createElement("div");
-            precioContainer.style.backgroundColor = "white";
-            precioContainer.style.color = "grey";
-            precioContainer.style.textAlign = "center";
-            precioContainer.style.padding = "10px";
-            precioContainer.style.marginTop = "10px";
-            precioContainer.style.borderRadius = "10px";
-            precioContainer.innerHTML =
-              "5 a 9 días<br>valor día<br><span style='color: #3c8735;'>$" +
-              data[1] +
-              "</span>";
-
-            let precioContainer2 = document.createElement("div");
-            precioContainer2.style.backgroundColor = "white";
-            precioContainer2.style.color = "grey";
-            precioContainer2.style.textAlign = "center";
-            precioContainer2.style.padding = "10px";
-            precioContainer2.style.marginTop = "10px";
-            precioContainer2.style.borderRadius = "10px";
-            precioContainer2.innerHTML =
-              "+10 días<br>valor día<br><span style='color: #3c8735;'>$" +
-              data[2] +
-              "</span>";
-
-            // Agregar el contenedor al segundo contenedor
-            container3.appendChild(precioContainer);
-            container3.appendChild(precioContainer2);
-          }
-        })
-        .catch((error) => {
-          console.error("Error al obtener los datos  de los precios del hotel:", error);
-    });
-    </script>
-
-    <div class="container2"></div>
-
-    <footer class="text-center mt-4">
-      <a href="../daycare-service/reserva_guarderia.html" class="btn-link btnfos-4">
-          <span>Reservar</span>
-      </a>
-  </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotel</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-   
-    <style>
-      .banner {
-        text-align: center;
-      }
-    </style>
-    
-    <style>
-    .titulo-img {
-      width: 170px;
-    }
-    </style>
-
-    <style>
-      .h2 {
-        text-align: center;
-        color: #ffffff;
-        font-size: 35px;
-      }
-    </style>
-
-    <style>
-      body {
-        background-color: #9dcd55;
-      }
-    </style>
-
-    <style>
-      .container-fluid {
-        margin-top: 10%;
-        width: 90%;
-        background-color: white;
-        color: rgb(155, 146, 146);
-        border-radius: 10px;
-        display: flex; /* Agregamos flexbox */
-        justify-content: center; /* Centramos horizontalmente */
-        align-items: center; /* Centramos verticalmente */
-      }
-      .container-fluid p {
-        font-size: 30px;
-      }
-      .container-fluid span {
-        display: block; /* Convertimos el span en un bloque */
-        text-align: center; /* Centramos el texto */
-        margin: 0 auto; /* Centramos horizontalmente */
-      }
-    </style>
-
-    <style>
-      .container1 {
-        margin-top: 5%;
-        width: 90%;
-        color: white;
-        text-align: center;
-        display: flex;
-      }
-
-      .container1 img {
-        width: 30px;
-        height: 30px;
-        margin: 0 10px;
-        display: inline-block;
-      }
-    </style>
-    <style>
-      .container2 {
-        display: flex;
-        justify-content: center; /* Centramos horizontalmente */
-      }
-
-      .container2 > div {
-        width: 30%; /* Puedes cambiar el ancho según lo desees */
-        margin: 5px; /* Espacio entre los elementos */
-      }
-     
-     .navbar {
-      background-color: #343a40;
-      z-index: 1;
-    }
-
-    .navbar-brand img {
-      max-width: 40px;
-      height: auto;
-      margin-right: 10px;
-    }
-
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    .navbar-nav .nav-link {
-      color: #fff !important;
-      margin-right: 1rem;
-    }
-
-    .navbar-toggler-icon {
-      color: #fff;
-    }
-    
-        .btn-link {
-            background-color: #9dcd55;
-            display: inline-block;
-            padding: 15px 10px;
-            text-align: center;
-            color: #fff;
-            font-size: 1.5rem;
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            text-decoration: none;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn-link:hover {
-            background-color: #7fbf3f;
-            transform: scale(1.02);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .btnfos-4 {
-            border: 1px solid;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .btnfos-4 span {
-            z-index: 20;
-        }
-
-        .btnfos-4:after {
-            background: #fff;
-            content: "";
-            height: 155px;
-            left: -75px;
-            opacity: .2;
-            position: absolute;
-            top: -50px;
-            width: 50px;
-            transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-            transform: rotate(35deg);
-            z-index: -10;
-        }
-
-        .btnfos-4:hover:after {
-            left: 120%;
-            transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-        }
-    </style>
-  </head>
-
-  <body>
-      
-    <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
-        Animal Resort
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-    <div class="banner">
-      <img
-        src="../statics/img_titulo_hotel.png"
-        class="titulo-img"
-        alt="Título Peluquería"
-      />
+    <div class="reasons">
+        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+            <img src="../statics/hotelimg1.jpeg" alt="Razón 1" class="banner-image fixed-size">
+            <h3>Razón 1: Alojamiento de Lujo</h3>
+            <p>Nuestro servicio de hotel ofrece habitaciones de lujo con todas las comodidades para asegurar que tu mascota disfrute de una estancia confortable y segura.</p>
+        </div>
+        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+            <img src="../statics/hotelimg2.jpg" alt="Razón 2" class="banner-image fixed-size">
+            <h3>Razón 2: Atención 24/7</h3>
+            <p>Proporcionamos atención continua las 24 horas del día, los 7 días de la semana, para asegurarnos de que tu mascota siempre esté bien cuidada y vigilada.</p>
+        </div>
+        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+            <img src="../statics/hotelimg3.jpeg" alt="Razón 3" class="banner-image fixed-size">
+            <h3>Razón 3: Actividades Personalizadas</h3>
+            <p>Ofrecemos un programa de actividades personalizado que incluye paseos, juegos y tiempo de relajación para mantener a tu mascota feliz y activa.</p>
+        </div>
     </div>
 
-    <div
-      class="container-fluid d-flex justify-content-center align-items-center">
-    </div>
-
-    <div class="container1"></div>
-
-    <div class="container2"></div>
-
-    <script>
-      fetch("../hotel-service/precios_hotel.php")
-        .then((response) => response.json())
-        .then((data) => {
-          // Procesar los datos obtenidos
-          if (data.length > 0) {
-            let container = document.querySelector(
-              ".container-fluid.d-flex.justify-content-center.align-items-center"
-            );
-            let diario = document.createElement("p");
-            diario.innerHTML =
-              "Valor hotel por día<br><span style='color: #3c8735;'>$" +
-              data[0] +
-              "</span>";
-            container.appendChild(diario);
-
-            let container3 = document.querySelector(".container2");
-            // Crear el contenedor blanco con letra gris
-            let precioContainer = document.createElement("div");
-            precioContainer.style.backgroundColor = "white";
-            precioContainer.style.color = "grey";
-            precioContainer.style.textAlign = "center";
-            precioContainer.style.padding = "10px";
-            precioContainer.style.marginTop = "10px";
-            precioContainer.style.borderRadius = "10px";
-            precioContainer.innerHTML =
-              "5 a 9 días<br>valor día<br><span style='color: #3c8735;'>$" +
-              data[1] +
-              "</span>";
-
-            let precioContainer2 = document.createElement("div");
-            precioContainer2.style.backgroundColor = "white";
-            precioContainer2.style.color = "grey";
-            precioContainer2.style.textAlign = "center";
-            precioContainer2.style.padding = "10px";
-            precioContainer2.style.marginTop = "10px";
-            precioContainer2.style.borderRadius = "10px";
-            precioContainer2.innerHTML =
-              "+10 días<br>valor día<br><span style='color: #3c8735;'>$" +
-              data[2] +
-              "</span>";
-
-            // Agregar el contenedor al segundo contenedor
-            container3.appendChild(precioContainer);
-            container3.appendChild(precioContainer2);
-          }
-        })
-        .catch((error) => {
-          console.error("Error al obtener los datos:", error);
-        });
-    </script>
-      
     <footer class="text-center mt-4">
         <a href="../daycare-service/reserva_guarderia.html" class="btn-link btnfos-4">
             <span>Reservar</span>
         </a>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  </body>
+</body>
 </html>
--->
+

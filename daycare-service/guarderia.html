@@ -43,7 +43,7 @@
             justify-content: center;
             align-items: center;
             padding: 1rem;
-            margin-bottom: 0px;
+            margin-bottom: 80px; /* Espacio para el botón */
             margin-top: 0px;
         }
 
@@ -112,20 +112,21 @@
         }
 
         .btn-link {
-            background-color: #9dcd55;
-            display: inline-block;
-            padding: 15px 10px;
-            text-align: center;
-            color: #fff;
-            font-size: 1.5rem;
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            text-decoration: none;
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-        }
+    background-color: #9dcd55;
+    display: inline-block;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; /* Cambiar de 1rem a 1.5rem */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
 
         .btn-link:hover {
             background-color: #7fbf3f;
@@ -200,6 +201,16 @@
         .navbar-toggler-icon {
             color: #fff;
         }
+
+        footer {
+            position: fixed;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            width: calc(100% - 40px);
+        }
+
     </style>
 </head>
 
@@ -238,27 +249,27 @@
         <div class="banner">
             <h2>Algunas razones del por qué deberías elegir nuestro servicio de guardería</h2>
         </div>
+
+        <div class="reasons">
+            <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                <img src="../statics/guarderia_para_perros.jpg" alt="Razón 1" class="banner-image fixed-size">
+                <h3>Razón 1: Cuidado Profesional</h3>
+                <p>Nuestro servicio de guardería ofrece un cuidado profesional dedicado a cada mascota. Contamos con personal capacitado que garantiza el bienestar y la seguridad de tu perro en todo momento.</p>
+            </div>
+            <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                <img src="../statics/guarderia_para_perros2.jpg" alt="Razón 2" class="banner-image fixed-size">
+                <h3>Razón 2: Instalaciones Seguras</h3>
+                <p>Nuestras instalaciones están diseñadas pensando en la seguridad y comodidad de tu perro. Contamos con áreas amplias y seguras donde tu mascota puede moverse libremente bajo supervisión constante.</p>
+            </div>
+            <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+                <img src="../statics/guarderia_para_perros3.jpg" alt="Razón 3" class="banner-image fixed-size">
+                <h3>Razón 3: Actividades Recreativas</h3>
+                <p>Ofrecemos una variedad de actividades recreativas para mantener a tu perro entretenido y activo. Desde juegos al aire libre hasta sesiones de socialización con otros perros, tu mascota nunca se aburrirá.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="reasons">
-        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
-            <img src="../statics/guarderia_para_perros.jpg" alt="Razón 1" class="banner-image fixed-size">
-            <h3>Razón 1: Cuidado Profesional</h3>
-            <p>Nuestro servicio de guardería ofrece un cuidado profesional dedicado a cada mascota. Contamos con personal capacitado que garantiza el bienestar y la seguridad de tu perro en todo momento.</p>
-        </div>
-        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
-            <img src="../statics/guarderia_para_perros2.jpg" alt="Razón 2" class="banner-image fixed-size">
-            <h3>Razón 2: Instalaciones Seguras</h3>
-            <p>Nuestras instalaciones están diseñadas pensando en la seguridad y comodidad de tu perro. Contamos con áreas amplias y seguras donde tu mascota puede moverse libremente bajo supervisión constante.</p>
-        </div>
-        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
-            <img src="../statics/guarderia_para_perros3.jpg" alt="Razón 3" class="banner-image fixed-size">
-            <h3>Razón 3: Actividades Recreativas</h3>
-            <p>Ofrecemos una variedad de actividades recreativas para mantener a tu perro entretenido y activo. Desde juegos al aire libre hasta sesiones de socialización con otros perros, tu mascota nunca se aburrirá.</p>
-        </div>
-    </div>
-
-    <footer class="text-center mt-4">
+    <footer class="text-center">
         <a href="../daycare-service/reserva_guarderia.html" class="btn-link btnfos-4">
             <span>Reservar</span>
         </a>

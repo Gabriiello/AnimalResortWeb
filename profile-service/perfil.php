@@ -90,6 +90,9 @@ $conexion->close();
                         <li> <?php echo $email; ?></li>
                         <li><strong>Teléfono:</strong> <?php echo $telefono; ?></li>
                         <li><strong>Documento:</strong> <?php echo $documento; ?></li>
+                        <li>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">Editar</button>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link btn-logout" href="../index.php">CERRAR SESION</a>
                         </li>
@@ -99,6 +102,37 @@ $conexion->close();
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST" action="actualizar_perfil.php">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Editar Perfil</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono; ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="documento" class="form-label">Documento</label>
+                            <input type="text" class="form-control" id="documento" name="documento" value="<?php echo $documento; ?>">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

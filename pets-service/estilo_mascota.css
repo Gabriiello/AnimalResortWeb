@@ -1,0 +1,87 @@
+.banner {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    background-image: url('../statics/banner77.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    padding: 80px 0; 
+    height: 400px; 
+}
+
+.img-fluid {
+    width: 170px;
+    animation: bounce 3s ease-in-out;
+}
+
+.titulo-img {
+    width: 400px;
+    animation: bounce 3s ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    70% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+body {
+    background-color: #9dcd55;
+}
+
+.card {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #343a40;
+    z-index: 1;
+}
+
+.navbar-brand img {
+    max-width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3c8735 !important;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+}
+.card-content {
+    padding: 15px;
+}
+
+.btn-edit, .btn-delete {
+    margin-right: 5px;
+}

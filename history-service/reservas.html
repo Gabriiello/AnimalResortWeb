@@ -8,12 +8,44 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
    
 <style>
-    .banner {
-        text-align: center;
-    }
-    </style>
+  .banner {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    background-image: url('../statics/banner77.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    padding: 80px 0; 
+    height: 400px; 
+  }
 
-<style>
+    .titulo-img, .img-fluid {
+        width: 170px;
+        animation: bounce 3s ease-in-out;
+      }
+
+      @keyframes bounce {
+          0% {
+              transform: translateY(0);
+          }
+          30% {
+              transform: translateY(-20px);
+          }
+          50% {
+              transform: translateY(10px);
+          }
+          70% {
+              transform: translateY(-10px);
+          }
+          100% {
+              transform: translateY(0);
+          }
+      }
+
+   
+      body {
+        background-color:#9dcd55 ;
+      }
     .h2{
       text-align: center;
       color:#ffffff;
@@ -22,15 +54,8 @@
     text-stroke: 2px #3c8735;
     padding: 10px;
     }
-  </style>
 
-<style>
-    body {
-      background-color:#9dcd55 ;
-    }
-  </style>
 
-<style>
     .container {
         margin-top: 5%;
         width: 90%;
@@ -50,25 +75,86 @@
    font-size: 20px;
 
     }
-</style>
 
-<style>
     .card {
         width: 300px;
         margin: 20px auto;
         text-align: center;
     }
-  
+
+.navbar {
+    background-color: #343a40;
+    z-index: 1;
+  }
+
+  .navbar-brand img {
+    max-width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+ 
+  }
+
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    margin-right: 1rem;
+    transition: color 0.3s;
+
+  }
+  .navbar-nav .nav-link:hover {
+    color: #3c8735 !important;
+  }
+
+  .navbar-toggler-icon {
+    color: #fff;
+  }
 </style>
 
 </head>
+
+
 <body>
 
-    <div class="banner">
-        <img src="../statics/logoAnimalR.png">
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
+            Animal Resort
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-    <h2 class="h2">RESERVAS</h2>
+
+
+    <div class="banner">
+        <img src="../statics/logoAnimalR.png" alt="Logo" class="img-fluid" /> 
+        <img src="../statics/img_titulo_reservas7.png" class="titulo-img img-fluid" alt="Título Peluquería" />
+      </div>
     
     <div class="cards-container">
  
@@ -76,6 +162,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        
         $(document).ready(function() {
 
             $.ajax({
@@ -109,4 +196,4 @@
     </script>
 
 </body>
-</html>
+</html> 

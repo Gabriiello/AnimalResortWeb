@@ -21,10 +21,8 @@ if (isset($_GET['code'])) {
     // Obtener el perfil del usuario
     $oauth2 = new Google_Service_Oauth2($client);
     $userInfo = $oauth2->userinfo->get();
+    var_dump($userInfo); 
     $email = $userInfo->email;
-    $givenName = $userInfo->givenName;
-    $familyName = $userInfo->familyName;
-    $nombre = $givenName . ' ' . $familyName;
 
     // Conectar a la base de datos
     $conexion = new mysqli("localhost", "animalre", "y367}A]y){K4Cg4", "animalre_database");
@@ -38,18 +36,14 @@ if (isset($_GET['code'])) {
     $sql = $conexion->query("SELECT * FROM Usuarios WHERE email='$usuario'");
 
     if ($datos = $sql->fetch_object()) {
-        setcookie('usuario_id', $datos->id, time() + 3600, '/'); // 'usuario_id' es el nombre de la cookie, y 3600 es la duración en segundos
+        setcookie('usuario_id', $datos->id, time() + 3600, '/'); 
+        $_SESSION['usuario_id'] = $datos->id; // Guardar el ID del usuario en sesión
         header("Location: ../menu-service/inicio.html");
         exit();
     } else {
-        echo "<script>
-            var confirmacion = confirm('Cuenta no encontrada, ¿desea registrarse?');
-            if (confirmacion) {
-                window.location.href = 'registro.php?nombre=" . urlencode($nombre) . "&email=" . urlencode($email) . "';
-            } else {
-                window.location.href = '../index.php';
-            }
-        </script>";
+        // Si el usuario no existe en la base de datos, podrías redirigirlo a una página de registro
+        header("Location: registro.php?nombre=" . urlencode($email) . "&email=" . urlencode($email));
+        exit();
     }
 
     $conexion->close();

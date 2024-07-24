@@ -15,12 +15,13 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-  
+
         html,
         body {
             height: 100%;
@@ -29,12 +30,12 @@
             background-color: #ffffff;
             overflow-x: hidden;
         }
-  
+
         body {
             display: flex;
             flex-direction: column;
         }
-  
+
         .main-content {
             flex: 1;
             display: flex;
@@ -42,37 +43,39 @@
             justify-content: center;
             align-items: center;
             padding: 1rem;
+            margin-bottom: 0px;
+            margin-top: 0px;
         }
-  
+
         .banner {
-            text-align: center;
-            margin: 10px 0;
+            text-align: left;
             position: relative;
             animation: fadeInMove 2s ease-in-out;
+            margin-top: 20px;
         }
-  
+
         .banner h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #9dcd55;
         }
-  
+
         .banner img {
             max-width: 100%;
-            margin: 0 10px;
+            margin: 0px;
             transition: transform 0.3s ease;
         }
-  
+
         .banner img:hover {
             transform: scale(1.1);
         }
-  
+
         .reasons {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             margin-top: 40px;
         }
-  
+
         .reason {
             background-color: white;
             color: rgb(155, 146, 146);
@@ -80,34 +83,34 @@
             padding: 20px;
             margin: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: calc(30% - 20px); /* Ajuste para dispositivos pequeños */
+            width: calc(30% - 20px);
             text-align: center;
             transition: transform 0.3s ease;
             position: relative;
             cursor: pointer;
         }
-  
+
         .reason:hover {
             transform: scale(1.05);
         }
-  
+
         .reason h3 {
             color: #9dcd55;
         }
-  
+
         .reason img {
             max-width: 100%;
             height: auto;
             margin-bottom: 10px;
             border-radius: 10px;
         }
-  
+
         .reason .fixed-size {
             width: 300px;
             height: 200px;
             object-fit: cover;
         }
-  
+
         .btn-link {
             background-color: #9dcd55;
             display: inline-block;
@@ -123,23 +126,23 @@
             margin-bottom: 1rem;
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
-  
+
         .btn-link:hover {
             background-color: #7fbf3f;
             transform: scale(1.02);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-  
+
         .btnfos-4 {
             border: 1px solid;
             overflow: hidden;
             position: relative;
         }
-  
+
         .btnfos-4 span {
             z-index: 20;
         }
-  
+
         .btnfos-4:after {
             background: #fff;
             content: "";
@@ -153,47 +156,47 @@
             transform: rotate(35deg);
             z-index: -10;
         }
-  
+
         .btnfos-4:hover:after {
             left: 120%;
             transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
         }
-  
+
         @media (max-width: 992px) {
             .reason {
-                width: calc(50% - 20px); /* Dos columnas en tablets */
+                width: calc(50% - 20px);
             }
         }
-  
+
         @media (max-width: 768px) {
             .reason {
-                width: calc(100% - 20px); /* Una columna en dispositivos móviles */
+                width: calc(100% - 20px);
             }
         }
-  
+
         .navbar {
             background-color: #343a40;
             z-index: 1;
         }
-  
+
         .navbar-brand img {
             max-width: 40px;
             height: auto;
             margin-right: 10px;
         }
-  
+
         .navbar-brand {
             display: flex;
             align-items: center;
             font-size: 1.5rem;
             font-weight: 600;
         }
-  
+
         .navbar-nav .nav-link {
             color: #fff !important;
             margin-right: 1rem;
         }
-  
+
         .navbar-toggler-icon {
             color: #fff;
         }
@@ -204,32 +207,33 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
-            Animal Resort
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
-              </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="#">
+                <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
+                Animal Resort
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
-  
+    </nav>
+
     <div class="main-content">
         <div class="banner">
             <h2>Algunas razones del por qué deberías elegir nuestro servicio de guardería</h2>
@@ -238,37 +242,39 @@
 
     <div class="reasons">
         <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
-            <img src="../statics/guarderia_para_perros.jpg" alt="Razón 1" class="banner-image">
+            <img src="../statics/guarderia_para_perros.jpg" alt="Razón 1" class="banner-image fixed-size">
             <h3>Razón 1: Cuidado Profesional</h3>
-            <p>Nuestro servicio de guardería ofrece un cuidado profesional dedicado a cada mascota. Contamos con
-                personal capacitado que garantiza el bienestar y la seguridad de tu perro en todo momento.</p>
+            <p>Nuestro servicio de guardería ofrece un cuidado profesional dedicado a cada mascota. Contamos con personal capacitado que garantiza el bienestar y la seguridad de tu perro en todo momento.</p>
         </div>
         <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
-            <img src="../statics/guarderia_para_perros2.jpg" alt="Razón 2" class="banner-image">
+            <img src="../statics/guarderia_para_perros2.jpg" alt="Razón 2" class="banner-image fixed-size">
             <h3>Razón 2: Instalaciones Seguras</h3>
-            <p>Nuestras instalaciones están diseñadas pensando en la seguridad y comodidad de tu perro. Contamos con
-                áreas amplias y seguras donde tu mascota puede moverse libremente bajo supervisión constante.</p>
+            <p>Nuestras instalaciones están diseñadas pensando en la seguridad y comodidad de tu perro. Contamos con áreas amplias y seguras donde tu mascota puede moverse libremente bajo supervisión constante.</p>
         </div>
         <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
-            <img src="../statics/guarderia_para_perros3.jpg" alt="Razón 3" class="banner-image">
+            <img src="../statics/guarderia_para_perros3.jpg" alt="Razón 3" class="banner-image fixed-size">
             <h3>Razón 3: Actividades Recreativas</h3>
-            <p>Ofrecemos una variedad de actividades recreativas para mantener a tu perro entretenido y activo. Desde
-                juegos al aire libre hasta sesiones de socialización con otros perros, tu mascota nunca se aburrirá.</p>
+            <p>Ofrecemos una variedad de actividades recreativas para mantener a tu perro entretenido y activo. Desde juegos al aire libre hasta sesiones de socialización con otros perros, tu mascota nunca se aburrirá.</p>
         </div>
     </div>
 
     <footer class="text-center mt-4">
-        <a href="reserva_guarderia.html" class="btn-link btnfos-4">
+        <a href="../daycare-service/reserva_guarderia.html" class="btn-link btnfos-4">
             <span>Reservar</span>
         </a>
     </footer>
 
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script>
+        function showImage(element) {
+            element.querySelector('img').style.opacity = '0.9';
+        }
+
+        function hideImage(element) {
+            element.querySelector('img').style.opacity = '1';
+        }
+    </script>
 </body>
 
 </html>

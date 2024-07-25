@@ -9,7 +9,7 @@
 
   <style>
     body {
-      background-color: #9dcd55;
+      background-color: #ffffff;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
@@ -50,16 +50,6 @@
       padding: 1rem;
   }
 
-  .banner {
-    text-align: center;
-    margin: 20px 0;
-    position: relative;
-    background-image: url('../statics/banner77.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    padding: 80px 0; 
-    height: 400px; 
-  }
 
     .titulo-img, .img-fluid {
       width: 170px;
@@ -89,17 +79,23 @@
       max-width: 300px; /* Ajuste máximo para el título */
     }
 
-    .container1 {
-      margin-top: 5%;
-      width: 90%;
-      color: white;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
+      .container1 {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+        text-align: center; /* Centra el texto dentro del contenedor */
+        width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
+        height: auto; /* Permite que el contenedor se ajuste a la altura del contenido */
+        padding: 20px; /* Agrega espacio interno si es necesario */
+        box-sizing: border-box; /* Incluye el padding en el tamaño total del contenedor */
+      }
+      
+      .container1 p {
+        font-size: 20px;
+        color: #134609; /* Cambia el color del texto aquí */
+        margin: 0; /* Elimina el margen por defecto */
+        padding: 0; /* Elimina el padding por defecto */
+      }
     .container1 img {
       width: 30px;
       height: 30px;
@@ -107,12 +103,7 @@
       display: inline-block;
     }
 
-    .container1 p {
-      font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
+ 
 
 
     .cards-container {
@@ -123,44 +114,56 @@
       gap: 20px;
       padding: 20px;
     }
+
+    
+
+
     .card {
-      width: 100%; /* Ajustado para ocupar todo el ancho disponible */
-      max-width: 350px; /* Ancho máximo para las tarjetas */
+      width: 350px;
+      height: 380px;
       margin: 20px;
       text-align: center;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
+      background-color: rgba(199, 197, 197, 0.329); /* Fondo gris con 50% de transparencia */
+      border-radius: 40px; /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
       overflow: hidden;
-    }
-
-    .card:hover {
-      transform: scale(1.2); 
-    }
-
-    .card img {
-      width: 100%;
-      height: auto;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card-content p.nombre_descu {
-      color: #3c8735;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .card-content p.precios {
-      color: #9dcd55;
-      font-size: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.5); /* Borde blanco semitransparente */
     }
     
+    .card:hover {
+      transform: scale(1.10); /* Aumenta el tamaño en un 5% */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Sombra más intensa en hover */
+    }
+    
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 5px solid #ffffff; /* Borde gris */
+      padding-bottom: 10px; /* Espacio adicional para mover la barra hacia abajo */
+    }
+    .card-content {
+      padding: 20px;
+      color: #000000; /* Texto blanco */
+      background: transparent; /* Fondo transparente para el contenido */
+      border-radius: 0 0 20px 20px;
+    }
+    
+    
+    .card-content p.nombre_descu {
+      color: #000000; /* Color del texto */
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 1.8; /* Espaciado entre líneas */
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra ligera en el texto */
+      margin-top: 50px; /* Ajusta el margen superior para bajar el título */
+    }
+    
+    
+
+
         .navbar {
       background-color: #343a40;
       z-index: 1;
@@ -187,6 +190,121 @@
     .navbar-toggler-icon {
       color: #fff;
     }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      margin-bottom: 0px; /* Ajusta este valor para subir más el contenido */
+  }
+  
+  
+  .banner {
+    text-align: left;
+    position: relative;
+    animation: fadeInMove 2s ease-in-out;
+    margin-top: 20px; /* Ajusta este valor para ajustar la posición del banner */
+    padding: 20px; /* Ajusta este valor para reducir el espacio interno si es necesario */
+    margin-bottom: 20px; /* Ajusta este valor para reducir el espacio debajo del banner */
+    
+  }
+
+
+  .banner h2 {
+      font-size: 1.5rem;
+      color: #9dcd55;
+  }
+
+
+
+  .banner img:hover {
+      transform: scale(1.1);
+  }
+
+  .reasons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Ajusta este valor para mover el contenedor hacia arriba */
+}
+
+
+
+.reason {
+  background-color: white;
+  color: rgb(155, 146, 146);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(30% - 20px);
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  margin-top: 0; /* Ajusta este valor para subir la tarjeta */
+  margin-bottom: 20px; /* Ajusta este valor si es necesario */
+}
+
+
+  .reason:hover {
+      transform: scale(1.05);
+  }
+
+  .reason h3 {
+      color: #9dcd55;
+  }
+
+  .reason img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 10px;
+  }
+
+  .reason .fixed-size {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+  }
+
+  .btn-link {
+background-color: #9dcd55;
+display: inline-block;
+padding: 15px 10px;
+text-align: center;
+color: #fff;
+font-size: 1.5rem;
+max-width: 400px;
+width: 100%;
+border-radius: 10px;
+text-decoration: none;
+margin-top: 1.5rem;
+margin-bottom: 1.5rem; /* Cambiar de 1rem a 1.5rem */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+
+  .btn-link:hover {
+      background-color: #7fbf3f;
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 992px) {
+      .reason {
+          width: calc(50% - 20px);
+      }
+  }
+
+  @media (max-width: 768px) {
+      .reason {
+          width: calc(100% - 20px);
+      }
+  }
 
   </style>
 </head>
@@ -222,12 +340,36 @@
       </div>
     </div>
   </nav>
+
+  <div class="main-content">
+    <div class="banner">
+        <h2>Algunas razones de por qué elejir nuestros servicios de baños</h2>
+    </div>
+
+    <div class="reasons">
+        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+            <img src="../statics/hotelimg1.jpeg" alt="Razón 1" class="banner-image fixed-size">
+            <h3>Razón 1: Cortes Personalizados</h3>
+            <p>Ofrecemos una amplia gama de estilos y cortes adaptados a las preferencias de los propietarios y las necesidades específicas del pelaje de cada mascota.</p>
+        </div>
+        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+            <img src="../statics/hotelimg2.jpg" alt="Razón 2" class="banner-image fixed-size">
+            <h3>Razón 2: Estilistas Expertos</h3>
+            <p>Nuestro equipo está altamente capacitado y tiene experiencia en el corte de diferentes razas y tipos de pelaje, asegurando resultados estéticos y adecuados para cada mascota.</p>
+        </div>
+        <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+            <img src="../statics/hotelimg3.jpeg" alt="Razón 3" class="banner-image fixed-size">
+            <h3>Razón 3: Beneficios para la Salud</h3>
+            <p> Un corte regular mantiene el pelaje en buen estado, previene enredos y problemas de piel, y permite detectar posibles problemas de salud durante el proceso.</p>
+        </div>
+    </div>
+</div>
     
-  <div class="banner">
+  <!--<div class="banner">
     <img src="../statics/logoAnimalR.png" alt="Logo AnimalR" class="img-fluid"  />
     <img src="../statics/img_titulo_peluqueria7.png" class="titulo-img" alt="Título Peluquería">
 
-  </div>
+  </div>-->
 
   <div class="container1">
       <p>SELECCIONA UN ESTILO DE CORTE</p>
@@ -235,6 +377,43 @@
 
     <div class="cards-container">
       <!-- Aquí se agregarán las tarjetas dinámicamente -->
+      <div class="card">
+        <div class="card-content">
+          <img src="..\statics\banner_mascotas77.jpg" alt="Imagen de ejemplo" />
+          <p class="nombre_descu">Nombre de Ejemplo</p>
+          <p class="precios">Precio: $123</p>
+        </div>
+      </div>
+
+
+  
+      <div class="card">
+        <div class="card-content">
+          <img src="..\statics\guarderia_para_perros3.jpg" alt="Imagen de ejemplo" />
+          <p class="nombre_descu">Nombre de Ejemplo</p>
+          <p class="precios">Precio: $123</p>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-content">
+          <img src="..\statics\logo_casa.png" alt="Imagen de ejemplo" />
+          <p class="nombre_descu">Nombre de Ejemplo</p>
+          <p class="precios">Precio: $123</p>
+        </div>
+      </div>
+
+
+  
+      <div class="card">
+        <div class="card-content">
+          <img src="..\statics\guarderia_para_perros3.jpg" alt="Imagen de ejemplo" />
+          <p class="nombre_descu">Nombre de Ejemplo</p>
+          <p class="precios">Precio: $123</p>
+        </div>
+      </div>
+    </div>
     </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

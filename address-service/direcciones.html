@@ -11,17 +11,8 @@
     />
 
     <style>
-      .banner {
-        text-align: center;
-        margin: 20px 0;
-        position: relative;
-        background-image: url('../statics/banner77.jpg'); 
-        background-size: cover; 
-        background-position: center; 
-        padding: 80px 0; 
-        height: 400px; 
-      }
-    
+
+      
       
       .img-fluid {
         width: 170px;
@@ -35,43 +26,59 @@
         animation: bounce 3s ease-in-out;
       }
 
-      @keyframes bounce {
-          0% {
-              transform: translateY(0);
-          }
-          30% {
-              transform: translateY(-20px);
-          }
-          50% {
-              transform: translateY(10px);
-          }
-          70% {
-              transform: translateY(-10px);
-          }
-          100% {
-              transform: translateY(0);
-          }
-      }
+     
     </style>
 
     <style>
       body {
-        background-color: #9dcd55;
+        background-color: #f8faf6;
       }
     </style>
 
     <style>
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Opcional, para centrar las tarjetas */
+      }
+      
       .card {
         width: 300px;
-        margin: 20px auto;
+        margin: 10px;
         text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.2); /* Sombra más suave y transparente */
+        border-radius: 35px; /* Redondea los bordes */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombra más suave */
+        background-color: rgba(243, 241, 241, 0.8); /* Fondo blanco con 80% opacidad */
+        overflow: hidden; /* Para que las imágenes no salgan de los bordes redondeados */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza la transición de animaciones */
       }
+      
+      .card:hover {
+        transform: translateY(-10px); /* Eleva la tarjeta al pasar el cursor */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra al pasar el cursor */
+      }
+      
+      
+      .card-content {
+        padding: 20px; /* Más espacio interno */
+      }
+      
       .card img {
-        width: 95px;
-        height: 95px;
+        width: 100px; /* Aumento del tamaño de la imagen */
+        height: 100px;
+        border-radius: 50%; /* Hace que la imagen sea circular */
         display: block;
-        margin: 0 auto; /* Centra la imagen horizontalmente */
-        }
+        margin: 0 auto;
+      }
+      
+      .card p {
+        margin: 15px 0; /* Ajusta el margen */
+        font-size: 15px; /* Tamaño de fuente ligeramente mayor */
+        color: #333; /* Color de texto más oscuro para mejor contraste */
+      }
+      
+
 
         .navbar {
           background-color: #343a40;
@@ -106,7 +113,138 @@
         .navbar-toggler-icon {
           color: #fff;
         }
+        .intro-info {
+          background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con un poco de transparencia */
+          border-radius: 12px; /* Redondea los bordes */
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
         
+        .intro-info h2 {
+          color: #3c8735; /* Color del encabezado */
+        }
+        
+        .intro-info p {
+          color: #333; /* Color del texto */
+          font-size: 16px; /* Tamaño de fuente para el texto */
+          line-height: 1.5; /* Espaciado entre líneas */
+        }
+        
+        
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      margin-bottom: 0px; /* Ajusta este valor para subir más el contenido */
+  }
+  
+  
+  .banner {
+            text-align: left;
+            position: relative;
+            animation: fadeInMove 2s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .banner h2 {
+            font-size: 1.5rem;
+            color: #9dcd55;
+        }
+
+
+
+
+  .banner img:hover {
+      transform: scale(1.1);
+  }
+
+  .reasons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Ajusta este valor para mover el contenedor hacia arriba */
+}
+
+
+.reason {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra la imagen y el texto */
+  background-color: white;
+  color: rgb(155, 146, 146);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(30% - 20px);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+
+  .reason:hover {
+      transform: scale(1.05);
+  }
+
+  .reason h3 {
+      color: #9dcd55;
+  }
+
+  .reason img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 10px;
+  }
+
+  .reason img.fixed-size {
+    width: 64px; /* Ajusta al tamaño deseado */
+    height: 64px; /* Ajusta al tamaño deseado */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin distorsionarse */
+    margin-bottom: 15px; /* Espacio debajo de la imagen para separar del texto */
+  }
+  
+  .btn-link {
+background-color: #9dcd55;
+display: inline-block;
+padding: 15px 10px;
+text-align: center;
+color: #fff;
+font-size: 1.5rem;
+max-width: 400px;
+width: 100%;
+border-radius: 10px;
+text-decoration: none;
+margin-top: 1.5rem;
+margin-bottom: 1.5rem; /* Cambiar de 1rem a 1.5rem */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+
+  .btn-link:hover {
+      background-color: #7fbf3f;
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 992px) {
+      .reason {
+          width: calc(50% - 20px);
+      }
+  }
+
+  @media (max-width: 768px) {
+      .reason {
+          width: calc(100% - 20px);
+      }
+  }
+
     </style>
   </head>
   
@@ -142,22 +280,45 @@
       </div>
     </nav>
     
-    <div class="banner">
-      <img src="../statics/logoAnimalR.png" alt="Logo" class="img-fluid" /> 
-      <img src="../statics/img_titulo_direcciones7.png" class="titulo-img img-fluid" alt="Título Peluquería" />
-    </div>
+    <div class="main-content">
+      <div class="banner">
+          <h2>
+            Bienvenido a Nuestra Sección de Direcciones
 
-    <div class="cards-container">
-        
-    </div>
+          </h2>
+      </div>
+  
+      <div class="reasons">
+          <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+              <img src="../statics/icon1.png" alt="Razón 1" class="banner-image fixed-size">
+              <h3>Bienvenida</h3>
+              <p>Aquí encontrarás un listado detallado de todas las ubicaciones importantes relacionadas con nuestros servicios. Cada tarjeta muestra información clave sobre cada dirección, incluyendo la ciudad, la dirección completa y una breve descripción.</p>
+          </div>
+          <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+              <img src="../statics/icon2.png" alt="Razón 2" class="banner-image fixed-size">
+              <h3>Información de Contacto</h3>
+              <p>Si tienes alguna pregunta sobre las direcciones o necesitas asistencia adicional, no dudes en ponerte en contacto con nuestro equipo. Puedes hacerlo a través de la sección de perfil en nuestro sitio web. </p>
+          </div>
+          <div class="reason" onmouseover="showImage(this)" onmouseout="hideImage(this)">
+              <img src="../statics/icon3.png" alt="Razón 3" class="banner-image fixed-size">
+              <h3>Consejos Útiles</h3>
+              <p>Asegúrate de verificar la dirección antes de realizar cualquier visita. Utiliza las descripciones de las tarjetas para confirmar que estás en el lugar correcto.</p>
+          </div>
+      </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div class="cards-container">   
+    </div>
+    
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
         $.ajax({
           url: "direcciones_usuario.php",
           dataType: "json",
           success: function (data) {
+
+            
             var cardsContainer = $(".cards-container");
             data.forEach(function (item) {
               var card = $('<div class="card">');

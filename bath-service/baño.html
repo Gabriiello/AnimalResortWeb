@@ -201,14 +201,16 @@
         }
 
         footer {
-    position: fixed;
-    bottom: -50px; /* Cambia -20px por 20px para que no esté fuera de la pantalla */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    width: auto; /* Cambia calc(100% - 40px) a auto para ajustar el ancho automáticamente */
-    text-align: center; /* Asegura que el contenido del footer esté centrado */
-}
+            position: fixed;
+            bottom: 0; /* Ajusta este valor para controlar la distancia desde el fondo de la ventana */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            width: auto; /* Ajusta el ancho automáticamente */
+            text-align: center;
+            margin-top: -20px; /* Reduce este valor para subir aún más el botón */
+          }
+          
 
 
         .cards-container {

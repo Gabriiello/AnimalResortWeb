@@ -34,56 +34,116 @@ $conexion->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
+    
     <style>
-        .banner {
-            text-align: center;
-        }
+                        .navbar {
+                    background-color: #343a40;
+                    z-index: 1;
+                    margin-top: 0; 
+                }
 
-        body {
-            background-color: #9dcd55;
-        }
+                .navbar-brand img {
+                    max-width: 40px;
+                    height: auto;
+                    margin-right: 10px;
+                }
 
-        .info-div {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-        }
+                .navbar-brand {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
 
-        .info-div ul {
-            list-style: none;
-            padding: 0;
-        }
+                .navbar-nav .nav-link {
+                    color: #fff !important;
+                    margin-right: 1rem;
+                    transition: color 0.3s;
+                }
 
-        .info-div li {
-            margin-bottom: 10px;
-        }
-    </style>
-    <style>
-        .btn-logout {
-            background-color: #3c8735;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-        }
+                .navbar-nav .nav-link:hover {
+                    color: #3c8735 !important;
+                }
 
-        .btn-logout:hover {
-            background-color: #3c8735;
-            color: #ffffff;
-        }
+                .navbar-toggler-icon {
+                    color: #fff;
+                }
+                .banner {
+                    text-align: center;
+                }
+
+                body {
+                    background-color: #9dcd55;
+                }
+
+                .info-div {
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 20px;
+                    text-align: center;
+                }
+
+                .info-div ul {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .info-div li {
+                    margin-bottom: 10px;
+                }
+
+                .btn-logout {
+                    background-color: #3c8735;
+                    color: #ffffff;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    display: inline-block;
+                }
+
+                .btn-logout:hover {
+                    background-color: #3c8735;
+                    color: #ffffff;
+                }
     </style>
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="../statics/logoAnimalR.png" alt="Logo Animal Resort">
+          Animal Resort
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../menu-service/inicio.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../profile-service/perfil.php">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../history-service/reservas.html">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pets-service/mascotas.html">Mascotas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../address-service/direcciones.html">Direcciones</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <div class="banner">
-                    <img src="../statics/logoAnimalR.png">
-                </div>
+                
                 <div class="info-div">
                     <ul>
                         <li> <?php echo $nombre; ?></li>
@@ -133,6 +193,8 @@ $conexion->close();
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 </body>
 </html>

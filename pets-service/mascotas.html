@@ -46,6 +46,10 @@
         <img src="../statics/img_titulo_mismascotas7.png" class="titulo-img img-fluid" alt="Título Peluquería" />
     </div>
 
+
+    <div>
+        <button class="btn btn-primary btn-edit" data-bs-toggle="modal" data-bs-target="#CrearMascotaModal">Crear</button>
+      </div>
     <div class="cards-container"></div>
 
     <!-- Modal para  editar mascota -->
@@ -88,6 +92,56 @@
             </div>
         </div>
     </div>
+
+     <!-- Modal para editar mascota -->
+     <div class="modal fade" id="CrearMascotaModal" tabindex="-1" aria-labelledby="CrearMascotaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="CrearMascotaForm" method="POST" action="create_mascota.php">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="CrearMascotaModalLabel">Crear Mascota</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="mb-3">
+                            <label for="nombre_mascota" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre_mascota" name="nombre_mascota" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="anios" class="form-label">Años</label>
+                            <input type="number" class="form-control" id="anios" name="anios" required>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="meses" class="form-label">Meses</label>
+                            <input type="number" class="form-control" id="meses" name="meses" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genero" class="form-label">Género</label>
+                            <select class="form-select" id="genero" name="genero" required>
+                                <option value="Macho">Macho</option>
+                                <option value="Hembra">Hembra</option>
+                            </select>        
+                        </div>
+                        <div class="mb-3">
+                            <label for="tamaño" class="form-label">Tamaño</label>
+                            <select class="form-select" id="tamaño" name="tamaño" required>
+                                <option value="Pequeño">Pequeño</option>
+                                <option value="Mediano">Mediano</option>
+                                <option value="Grande">Grande</option>
+                            </select>        
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

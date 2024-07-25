@@ -15,13 +15,8 @@ if (mysqli_connect_errno ()) {
 	$id_usuario_reserva=$_POST["id_usuario_reserva"];
 	$estado_reserva=$_POST["estado_reserva"];
     $content = $_POST["listaIdsMascotas"];
-	$id_pro_servi=1; // 1 es guarderia 2 hotel 4 corte y 5 baño
-	$servicio_especifico="Guarderia"; // solo poner guarderia, hotel, corte o baño
-    //el grupo solo aplica para guarderia
-    $sqlGrupo = "SELECT MAX(grupo_reserva) AS max_grupo FROM Reservas";
-    $resultGrupo = mysqli_query($conexion, $sqlGrupo);
-    $row = mysqli_fetch_assoc($resultGrupo);
-    $grupo = $row['max_grupo'] + 1; // Incrementar el grupo en 1
+	$id_pro_servi=2; // 1 es guarderia 2 hotel 4 corte y 5 baño
+	$servicio_especifico="Hotel"; // solo poner guarderia, hotel, corte o baño
 	
     $json = json_decode($content, true);
     $conteo=0;
